@@ -63,4 +63,8 @@ def send_message(chat_id, text, reply_markup=None):
     params = {
         'chat_id': chat_id,
         'text': text,
-        'parse_mode': 'HTML' }
+        'parse_mode': 'HTML'
+    }
+    if reply_markup:
+        params['reply_markup'] = reply_markup
+    return call_api('sendMessage', params)
